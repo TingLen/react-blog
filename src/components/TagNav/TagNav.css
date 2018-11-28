@@ -1,0 +1,29 @@
+.TagNav{
+    padding: 10px;
+    height: 200px;
+    width: 150px;
+    border: 1px solid #000;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.TagNav .TagNav_title{
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+.TagNav .TagNav_list{
+    
+    padding: 4px;
+    font-size: 16px;
+}
+.TagNav .TagNav_list li{
+    margin: 6px 0px 6px 0px;
+}
+.TagNav .TagNav_list li a{
+    color: #188fff;
+}
+.TagNav .TagNav_list li a:hover{
+    color:#188fffbd;
+}
