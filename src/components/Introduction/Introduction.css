@@ -1,0 +1,36 @@
+.introduction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 200px;
+    width: 150px;
+    border: 1px solid #000;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.introduction .introduction_avatar{
+    width: 60px;
+    height: 60px;
+    margin: 6px 0px 6px 0px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.introduction hr{
+    width: 100%;
+}
+.introduction .introduction_text{
+    margin: 6px 0px 6px 0px;
+    font-size: 14px;
+    
+}
+.introduction .introduction_text p{
+    margin: 6px 0px 6px 0px;
+    line-height: 24px;
+}
