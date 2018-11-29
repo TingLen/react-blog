@@ -14,8 +14,7 @@ class Introduction extends React.Component {
                     <p>
                         Tag:    前端 java
                     </p>
-                    <p>偶尔向往着AI</p>
-                    <p>结果目前在全干工程师的道路上一路向北……</p>
+                    <p>不会算法的java工程师不是个好的前端</p>
                 </div>
             </div>
         )
