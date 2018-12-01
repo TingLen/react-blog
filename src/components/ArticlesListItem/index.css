@@ -1,0 +1,12 @@
+.articlesListItem{
+    margin-bottom: 16px;
+}
+.articlesListItem hr{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.articlesListItem .articlesListItem_bottom{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}

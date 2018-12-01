@@ -1,10 +1,12 @@
 import React from 'react'
-
+import ArticlesListItem from '../ArticlesListItem'
 class ArticlesList extends React.Component {
-    state = {  }
     render() {
         return (
             <div className="ArticlesList">
+             <ArticlesListItem/>
+             <ArticlesListItem/>
+             <ArticlesListItem/>
             </div>
         )
     }

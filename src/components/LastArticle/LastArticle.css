@@ -1,0 +1,29 @@
+.lastArticle{
+    width: 700px;
+    /* height: 300px; */
+}
+.lastArticle .lastArticle_title{
+    font-size: 28px;
+    font-weight: 350;
+    margin: 10px 0px;
+    /* color: #188fff; */
+}
+.lastArticle .lastArticle_text{
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+}
+.lastArticle .lastArticle_text .lastArticle_moreBtn a{
+    color: #116cc0;
+}
+.lastArticle .lastArticle_text .lastArticle_moreBtn a:hover{
+    color: #188fff;
+}
+
+.lastArticle .lastArticle_date{
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 16px;
+    text-align: right;
+}
