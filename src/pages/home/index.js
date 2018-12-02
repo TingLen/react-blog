@@ -4,7 +4,6 @@ import Introduction from '../../components/Introduction/Introduction'
 import ArticlesList from '../../components/ArticlesList/ArticlesList'
 import TagNav from '../../components/TagNav/TagNav'
 import LastArticle from '../../components/LastArticle/LastArticle'
-
 class Home extends React.Component {
     render() {
         return (
