@@ -9,9 +9,9 @@ class TagNav extends React.Component {
                 <h1 className="TagNav_title">归档</h1>
                 <hr/>
                 <ul className="TagNav_list">
-                    <li><Link to="/">vue</Link></li>
-                    <li><Link to="/">react</Link></li>
-                    <li><Link to="/">java</Link></li>
+                    <li><Link to="/categories/vue">vue</Link></li>
+                    <li><Link to="/categories/react">react</Link></li>
+                    <li><Link to="/categories/java">java</Link></li>
                 </ul>
             </div>
             

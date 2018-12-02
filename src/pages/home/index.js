@@ -8,8 +8,8 @@ import LastArticle from '../../components/LastArticle/LastArticle'
 class Home extends React.Component {
     render() {
         return (
-            <div className="home">
-                <div className="home_main">
+            <div className="home page">
+                <div className="home_main page_main">
                     <LastArticle/>
                     <h1 className="last_title">近期文章</h1>
                     <hr></hr>
@@ -17,7 +17,7 @@ class Home extends React.Component {
                         <ArticlesList/>
                     </div>
                 </div>
-                <div className="home_sider">
+                <div className="home_sider page_slider">
                     <div className="sider_nav">
                          <TagNav/> 
                     </div>
