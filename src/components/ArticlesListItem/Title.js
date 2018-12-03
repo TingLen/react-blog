@@ -6,7 +6,7 @@ class Title extends React.Component {
     render() {
         return (
             <h1 className="articlesListItem_title">
-                <Link to="">文章标题文章标题文章标题</Link>
+                <Link to="/article/name">文章标题文章标题文章标题</Link>
             </h1>
         )
     }
