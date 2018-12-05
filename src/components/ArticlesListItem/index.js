@@ -7,11 +7,11 @@ class ArticlesListItem extends React.Component {
     render() {
         return (
             <div className="articlesListItem">
-                <Title/>
+                <Title title={this.props.articlesListItem.title} id={this.props.articlesListItem.id}/>
                 <hr/>
                 <div className="articlesListItem_bottom">
-                    <Tag/>
-                    <Date/>
+                    <Tag tag={this.props.articlesListItem.tag}/>
+                    <Date date={this.props.articlesListItem.date}/>
                 </div>
             </div>
         );

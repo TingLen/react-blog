@@ -6,6 +6,7 @@ import TagNav from '../../components/TagNav/TagNav'
 import LastArticle from '../../components/LastArticle/LastArticle'
 import { get } from '../../http/http'
 process.env.NODE_ENV === 'development' && require ('../../mock/LastArticle')
+process.env.NODE_ENV === 'development' && require ('../../mock/ArticlesList')
 class Home extends React.Component {
     constructor(props){
         super(props)
@@ -15,16 +16,25 @@ class Home extends React.Component {
                 title:'',
                 text:'',
                 date:''
-            }
+            },
+            articlesList:[]
         }
     }
     componentWillMount(){
         get('/getLastArticle')
         .then(res => {
-            console.log(res)
             if(res.success){
                 this.setState({
                     lastArticle: res.data
+                })
+            }
+        })
+        get('/getArticlesList')
+        .then(res => {
+            console.log(res)
+            if(res.success){
+                this.setState({
+                    articlesList: res.data
                 })
             }
         })
@@ -38,7 +48,7 @@ class Home extends React.Component {
                     <h1 className="last_title">近期文章</h1>
                     <hr></hr>
                     <div className="last_list">
-                        <ArticlesList/>
+                        <ArticlesList articlesList={this.state.articlesList}/>
                     </div>
                 </div>
                 <div className="home_sider page_slider">
