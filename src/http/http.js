@@ -43,3 +43,9 @@ export const post = (url,params) => {
         params
     })
 }
+
+export const allRequest = (requests) => {
+    return axios.all(requests)
+}
+
+export const spread = axios.spread

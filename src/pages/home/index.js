@@ -4,10 +4,14 @@ import Introduction from '../../components/Introduction/Introduction'
 import ArticlesList from '../../components/ArticlesList/ArticlesList'
 import TagNav from '../../components/TagNav/TagNav'
 import LastArticle from '../../components/LastArticle/LastArticle'
-import { get } from '../../http/http'
-process.env.NODE_ENV === 'development' && require ('../../mock/LastArticle')
-process.env.NODE_ENV === 'development' && require ('../../mock/ArticlesList')
-process.env.NODE_ENV === 'development' && require ('../../mock/TagNav')
+import { get,allRequest,spread } from '../../http/http'
+
+if(process.env.NODE_ENV === 'development'){
+    require ('../../mock/LastArticle')
+    require ('../../mock/ArticlesList')
+    require ('../../mock/TagNav')
+}
+
 class Home extends React.Component {
     constructor(props){
         super(props)
@@ -23,30 +27,28 @@ class Home extends React.Component {
         }
     }
     componentWillMount(){
-        get('/getLastArticle')
-        .then(res => {
-            if(res.success){
+        const getLastArticle = () => get('/getLastArticle')
+        const getArticlesList = () => get('/getArticlesList')
+        const getNavs = () => get('/getNavs')
+        //并发请求所有ajax
+        allRequest([getLastArticle(),getArticlesList(),getNavs()])
+        .then(spread((lasa,artl,navs) => {
+            if(lasa.success){
                 this.setState({
-                    lastArticle: res.data
+                    lastArticle: lasa.data
                 })
             }
-        })
-        get('/getArticlesList')
-        .then(res => {
-            if(res.success){
+            if(artl.success){
                 this.setState({
-                    articlesList: res.data
+                    articlesList: artl.data
                 })
             }
-        })
-        get('/getNavs')
-        .then(res => {
-            if(res.success){
+            if(navs.success){
                 this.setState({
-                    navs: res.data
+                    navs: navs.data
                 })
             }
-        })
+        }))
     }
     render() {
         return (
@@ -74,4 +76,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default Home
