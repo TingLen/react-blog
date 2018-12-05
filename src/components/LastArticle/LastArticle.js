@@ -1,23 +1,27 @@
 import React from 'react'
 import './LastArticle.css'
 import {Link} from 'react-router-dom'
-
 class LastArticle extends React.Component {
+    constructor(props){
+        super(props)
+
+    }
+    getText = (originalText) => {
+        if(originalText.length >= 100){
+            const newText = originalText.slice(0,100) + '...'
+            return newText
+        }
+        return originalText
+    }
     render() {
         return (
             <div className="lastArticle">
-                <h1 className="lastArticle_title">这是标题这是标题这是标题</h1>
+                <h1 className="lastArticle_title">{this.props.lastArticle.title}</h1>
                 <p className="lastArticle_text">
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
-                这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是...
-                <span className="lastArticle_moreBtn"><Link to="/">>>阅读全文</Link></span>
+                {this.getText(this.props.lastArticle.text)}
+                <span className="lastArticle_moreBtn"><Link to={'/article/'+this.props.lastArticle.id}>>>阅读全文</Link></span>
                 </p>
-                <div className="lastArticle_date">2018.11.11</div>
+                <div className="lastArticle_date">{this.props.lastArticle.date}</div>
             </div>
         );
     }
