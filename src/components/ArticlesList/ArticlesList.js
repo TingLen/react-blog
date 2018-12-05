@@ -4,7 +4,7 @@ class ArticlesList extends React.Component {
 
     render() {
         const items = this.props.articlesList.map(item => {
-            return <ArticlesListItem articlesListItem = {item}/>
+            return <ArticlesListItem articlesListItem = {item} key={item.id}/>
         })
         return (
             <div className="ArticlesList">

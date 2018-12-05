@@ -7,6 +7,7 @@ import LastArticle from '../../components/LastArticle/LastArticle'
 import { get } from '../../http/http'
 process.env.NODE_ENV === 'development' && require ('../../mock/LastArticle')
 process.env.NODE_ENV === 'development' && require ('../../mock/ArticlesList')
+process.env.NODE_ENV === 'development' && require ('../../mock/TagNav')
 class Home extends React.Component {
     constructor(props){
         super(props)
@@ -17,7 +18,8 @@ class Home extends React.Component {
                 text:'',
                 date:''
             },
-            articlesList:[]
+            articlesList:[],
+            navs:[]
         }
     }
     componentWillMount(){
@@ -31,10 +33,17 @@ class Home extends React.Component {
         })
         get('/getArticlesList')
         .then(res => {
-            console.log(res)
             if(res.success){
                 this.setState({
                     articlesList: res.data
+                })
+            }
+        })
+        get('/getNavs')
+        .then(res => {
+            if(res.success){
+                this.setState({
+                    navs: res.data
                 })
             }
         })
@@ -53,7 +62,7 @@ class Home extends React.Component {
                 </div>
                 <div className="home_sider page_slider">
                     <div className="sider_nav">
-                         <TagNav/> 
+                         <TagNav navs={this.state.navs}/> 
                     </div>
                     <div className="sider_introduction">
                         <Introduction/>

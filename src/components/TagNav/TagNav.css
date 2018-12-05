@@ -1,6 +1,6 @@
 .TagNav{
     padding: 10px;
-    height: 200px;
+    min-height: 200px;
     width: 150px;
     border: 1px solid #000;
     border-radius:10px;
