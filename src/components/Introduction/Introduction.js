@@ -8,7 +8,8 @@ class Introduction extends React.Component {
             <div className="introduction">
                 <img 
                 className="introduction_avatar"
-                src={avatar}/>
+                src={avatar}
+                alt='avatar'/>
                 <hr/>
                 <div className="introduction_text">
                     <p>

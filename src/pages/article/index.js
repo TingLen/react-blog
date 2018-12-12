@@ -1,6 +1,6 @@
 import React from 'react'
 import './Article.css'
-import Article_ from '../../components/Article/Article_'
+import ArticleContent from '../../components/Article/Article_'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumd'
 import { getRouterParams } from '../../methods'
 import { get } from '../../http/http'
@@ -31,7 +31,7 @@ class Article extends React.Component {
         return (
             <div className="article page">
                 <Breadcrumb  page={getRouterParams(this.props.match.params)}/>
-                <Article_
+                <ArticleContent 
                  title={this.state.title}
                  info={this.state.info}
                  text={this.state.text}/>

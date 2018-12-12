@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { resolve } from 'upath';
 
 axios.defaults.baseURL = "/"
 axios.defaults.timeout = 10000

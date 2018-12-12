@@ -2,10 +2,6 @@ import React from 'react'
 import './LastArticle.css'
 import {Link} from 'react-router-dom'
 class LastArticle extends React.Component {
-    constructor(props){
-        super(props)
-
-    }
     getText = (originalText) => {
         if(originalText.length >= 100){
             const newText = originalText.slice(0,100) + '...'

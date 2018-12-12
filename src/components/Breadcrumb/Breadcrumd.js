@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 class Breadcrumd extends React.Component {
     
     render() {
-        const route = '/'
+        let route = '/'
         const nodeList = this.props.page.map((item,index) => {
             if(index === this.props.page.length - 1){
                 return (
