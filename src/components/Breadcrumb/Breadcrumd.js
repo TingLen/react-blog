@@ -12,8 +12,9 @@ class Breadcrumd extends React.Component {
                     <span key={item}>{item}</span>
                 )
             }
+            route += (route + item + '/')
             return (
-                <Link to={route + item + '/'} key={item}>{item + '/'}</Link>
+                <Link to={route} key={item}>{item + '/'}</Link>
             )
         })
         return (
