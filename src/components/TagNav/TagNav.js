@@ -17,7 +17,6 @@ class TagNav extends React.Component {
                     {liNode}
                 </ul>
             </div>
-            
         )
     }
 }

@@ -31,9 +31,18 @@ class Categories extends React.Component {
         }))
     }
     render() {
+        const getRouter = () => {
+            const arr = []
+            for(let item in this.props.match.params){
+                arr.push(this.props.match.params[item])
+            }
+            return arr
+            
+        }
         return (
+            
             <div className="categories">
-                <Breadcrumb/>
+                <Breadcrumb page={getRouter()}/>
                 <div className="page">
                     <div className="categories_main page_main">
                         <ArticlesList articlesList={this.state.articlesList}/>
