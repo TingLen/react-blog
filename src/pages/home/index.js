@@ -8,7 +8,7 @@ import { get,allRequest,spread } from '../../http/http'
 
 if(process.env.NODE_ENV === 'development'){
     require ('../../mock/LastArticle')
-    require ('../../mock/ArticlesList')
+    require ('../../mock/LastArticlesList')
     require ('../../mock/TagNav')
 }
 
@@ -28,7 +28,7 @@ class Home extends React.Component {
     }
     componentWillMount(){
         const getLastArticle = () => get('/getLastArticle')
-        const getArticlesList = () => get('/getArticlesList')
+        const getArticlesList = () => get('/getLastArticlesList')
         const getNavs = () => get('/getNavs')
         //并发请求所有ajax
         allRequest([getLastArticle(),getArticlesList(),getNavs()])

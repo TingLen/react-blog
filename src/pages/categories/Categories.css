@@ -1,6 +1,7 @@
-.categories_main{
+.App .categories_main{
     flex-grow: 4;
 }
-.categories_slider{
+.App .categories .categories_slider{
+    justify-content: flex-start;
     flex-grow: 1;
 }
